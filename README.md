@@ -1,3 +1,3 @@
 # Codeforces
 
-Codeforces Contest Problem Solutions that I have solved
+Codeforces Problem Solutions that I have solved
