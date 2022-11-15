@@ -7,39 +7,36 @@ void solve()
     cin >> n;
 
     string s;
-    string t = "BAN";
+    cin >> s;
+
+    int ans = 0;
 
     for (int i = 0; i < n; i++)
     {
-        s = s + t;
-    }
+        int dis = 0;
+        vector<int> cnt(10, 0);
 
-    if (n < 3)
-    {
-        cout << 1 << "\n";
-
-        if (n == 1)
-            cout << 2 << " " << 3 << "\n";
-        else
-            cout << 2 << " " << 6 << "\n";
-    }
-    else
-    {
-        int ans = n / 2;
-
-        if (n % 2)
-            ans++;
-        
-        cout << ans << "\n";
-
-        int aptr = 2, nptr = 3 * n;
-
-        while (ans--)
+        for (int j = i; j >= max(i - 100, 0); j--)
         {
-            cout << aptr << " " << nptr << "\n";
-            aptr += 3, nptr -= 3;
+            if (cnt[s[j] - '0'] == 0)
+                dis++;
+            cnt[s[j] - '0']++;
+
+            int flag = 1;
+            for (int k = 0; k < 10; k++)
+            {
+                if (cnt[k] > dis)
+                {
+                    flag = 0;
+                    break;
+                }
+            }
+
+            ans += flag;
         }
     }
+
+    cout << ans << "\n";
 }
 
 int main()
