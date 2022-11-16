@@ -1,3 +1,3 @@
 # Codeforces
 
-Codeforces Problem Solutions that I have frequently solved
+This repository contains solutions to Codeforces problems that I have solved using C++.
